@@ -1,0 +1,179 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="curtain" id="curtain"> 
+      <h2 class="curtain-title">RIS​HU RISHAV</h2>
+      <p class="curtain-subtitle">The Best Designer Alive!</p>
+      <div class="curtain-icons">
+        <a href="https://facebook.com" target="_blank"
+          ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://twitter.com" target="_blank"
+          ><i class="fab fa-twitter"></i -->
+      </a>
+     </div>
+    </div>
+    <header>
+      <div class="rishu1" id="rishu1">
+        <nav>
+          <h1>
+            RISHU RISHAV
+          </h1>
+          <li>About</li>
+          <li>Solution</li>
+          <li>Services</li>
+          <button>
+            Contact
+          </button>
+        </nav>
+      </div>
+    </header>
+    <div class="main" id="main">
+      <p class="main-tagline">RISHU RISHAV... BRAND'S STORY, AMPLIFIED.</p>
+      <h1 class="main-heading">
+        WE <span style="text-decoration: line-through;">DON'T</span> JUST MANAGE FEEDS, WE CRAFT OBSESSIONS.
+      </h1>
+      <button class="main-button">LET'S MAKE WAVES</button>
+
+      <div class="carousel">
+        <button class="carousel-arrow left" id="prevBtn">&#10094;</button>
+        <div class="cards">
+          <div class="card" style="background-image: url('images/3.png')"></div>
+          <div class="card" style="background-image: url('images/4.png')"></div>
+          <div
+            class="card active"
+            style="background-image: url('images/5.jpg')"
+          ></div>
+          <div class="card" style="background-image: url('images/6.png')"></div>
+          <div class="card" style="background-image: url('images/7.png')"></div>
+          <div class="card" style="background-image: url('images/8.png')"></div>
+          <div class="card" style="background-image: url('images/9.png')"></div>
+          <div
+            class="card"
+            style="background-image: url('images/10.png')"
+          ></div>
+          <div
+            class="card"
+            style="background-image: url('images/11.png')"
+          ></div>
+          <div
+            class="card"
+            style="background-image: url('images/12.png')"
+          ></div>
+        </div>
+        <button class="carousel-arrow right" id="nextBtn">&#10095;</button>
+      </div>
+    </div>
+    <div class="main2" id="main2">
+      <h1>
+        About Me 
+      </h1> <br>
+      <p class="main-tagline2"> 
+        Hey, I’m Rishu Rishav — a passionate self-taught web developer, ethical hacker-in-training, and dreamer who believes in creating value through creativity, code, and compassion.
+
+        I come from humble beginnings, driven by a deep desire to build something meaningful — not just for myself, but for those who feel unseen in this fast world. I didn’t have everything figured out, but I chose to start, to learn, and to grow every single day. I’ve spent sleepless nights learning how to design, build, and secure websites that not only look good but speak to people.
+
+        My journey isn’t just about websites or code — it’s about freedom, self-expression, and impact. I’m building this platform as a reflection of my values: simplicity, depth, and authenticity. I believe in silent hard work, letting actions speak, and always showing up — for myself and for others.
+
+        Through every project I create, I aim to combine emotion with technology — so that even a single click or scroll can tell a story.
+
+        Thanks for visiting my world. I’m just getting started.
+      </p>
+      <div class="main3" id="main3"></div>
+    </div>
+    <div class="main4">
+      <div class="rishu2">
+        <br><br><br><br><br>
+        <h1>Favourite Songs</h1> <br>
+        <p>Music isn’t just sound — it’s emotion, memory, and pure soul.
+        Here are some of the songs that have stayed with me through late-night coding sessions, quiet walks, deep thoughts, and moments of raw inspiration.
+        These tracks speak what words often can’t — they remind me of who I am, who I was, and who I’m becoming.
+
+        Plug in. Feel free to vibe along.</p>
+        
+        <div class="rishu3">
+          <img src="images/15.png" height="330px" width="380px" alt="">
+          <div class="rishu4">
+            <img src="images/16.png" alt="">
+          </div>
+          <div class="rishu5"> 
+            <img src="images/17.png" alt="">
+          </div>
+          <div class="rishav6">
+            <img src="images/18.png" alt="">
+          </div>
+          <div class="rishav7">
+            <img src="images/19.jpg" alt="">
+          </div>
+        </div>
+        <div class="container1" >
+          
+          <div class="rishu8">
+            <div class="rishu9">
+            <div class="rishu10">
+              <div class="rishu11">
+                <div class="rishu12">
+              
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          </div>
+          
+        </div>
+        
+    <script>
+      const curtain = document.getElementById("curtain");
+      curtain.addEventListener("click", () => {
+        curtain.classList.add("hidden");
+      });
+
+      const cardsContainer = document.querySelector(".cards");
+      const allCards = Array.from(document.querySelectorAll(".card"));
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      let start = 0;
+
+      function renderCards() {
+        allCards.forEach((card, index) => {
+          card.style.display = "none";
+          card.classList.remove("active");
+        });
+
+        const visible = allCards.slice(start, start + 3);
+        visible.forEach((card, i) => {
+          card.style.display = "block";
+          card.style.position = "absolute";
+          card.style.left = `${30 + i * 220}px`;
+          card.style.transform = i === 1 ? "scale(1.1)" : "scale(0.9)";
+          card.classList.toggle("active", i === 1);
+        });
+      }
+
+      prevBtn.addEventListener("click", () => {
+        start = (start - 1 + allCards.length) % allCards.length;
+        renderCards();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        start = (start + 1) % allCards.length;
+        renderCards();
+      });
+
+      window.addEventListener("DOMContentLoaded", renderCards);
+    </script>
+  </body>
+</html>
